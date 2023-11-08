@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+name: demo-ui
+spec:
+replicas: 1
+revisionHistoryLimit: 3
+selector:
+matchLabels:
+app: demo-ui
+template:
+metadata:
+labels:
+app: demo-ui
+spec:
+containers:
+- image: anderson663/demo-ui:4900b94a2a1d7f650ee9c3fbc64af12d2a68f327
+name: demo-ui
+ports:
+- containerPort: 80
